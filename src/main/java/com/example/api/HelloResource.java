@@ -13,7 +13,7 @@ public class HelloResource {
     @GET
     @Produces({"application/json"})
     @JsonAnyGetter
-    public Response hello(@QueryParam("role") String role) {
+    public Response getPersonsWithRole(@QueryParam("role") String role) {
         try {
             List<Person> person = DataStore.getInstance().getPersonRole(role);
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
